@@ -42,7 +42,7 @@ vim test.txt -> 'i' 눌러서 hello linux 작성 -> ESC 누르고 :wq! 저장 or
 <img width="395" height="85" alt="image" src="https://github.com/user-attachments/assets/400f1467-4e28-4010-8403-cf299bed2c69" />
 
 문제14 newbackup.txt 파일을 삭제하시오
-<img width="414" height="19" alt="image" src="https://github.com/user-attachments/assets/c2882fee-dd76-4a90-a160-f1e90b8260af" />
+그냥 파일을 삭제할땐 rm 만쓴다.
 
 문제15 project 디렉터리를 삭제하시오
 <img width="278" height="18" alt="image" src="https://github.com/user-attachments/assets/e5c54182-eaa6-4a92-95c5-1091d6a85309" />
