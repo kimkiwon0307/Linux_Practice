@@ -18,7 +18,7 @@
 <img width="400" height="86" alt="image" src="https://github.com/user-attachments/assets/f9cafd8b-bc6c-4046-ae38-8393d7bffcfb" />
 
 문제6 test.txt 파일 안에 아래 내용을 저장하세요.
-vim test.txt -> 'i' 눌러서 hello linux 작성 -> ESC 누르고 :wq! 저장
+vim test.txt -> 'i' 눌러서 hello linux 작성 -> ESC 누르고 :wq! 저장 or echo "hello linux" > test.txt
 
 문제7 test.txt 파일 내용을 출력하시오.
 <img width="354" height="33" alt="image" src="https://github.com/user-attachments/assets/5dac37a6-5499-40b5-8498-533133df2518" />
