@@ -53,3 +53,74 @@
 
 ### 👤 3. 사용자 권한 및 보안 설정
 * **문제21** : `clouduser` 사용자를 생성하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo adduser clouduser</blockquote></details>
+* **문제22** : 현재 로그인 중인 사용자 정보를 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>id (또는 단순히 계정명만 확인 시: whoami)</blockquote></details>
+* **문제23** : `clouduser`의 그룹 정보를 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>groups clouduser</blockquote></details>
+* **문제24** : `clouduser`에 `sudo` 권한을 부여하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo usermod -aG sudo clouduser</blockquote></details>
+* **문제25** : `test.txt` 파일 소유자를 `clouduser`로 변경하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo chown clouduser test.txt</blockquote></details>
+* **문제26** : `test.txt` 파일에 실행 권한을 추가하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo chmod +x test.txt</blockquote></details>
+* **문제27** : `test.txt` 파일 권한을 확인하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>ls -l test.txt</blockquote></details>
+* **문제28** : 루트 권한으로 셸에 진입하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo su -</blockquote></details>
+* **문제29** : 현재 로그인 중인 사용자 목록을 확인하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>who</blockquote></details>
+* **문제30** : 현재 사용자 환경변수 `PATH`를 출력하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>echo $PATH</blockquote></details>
+
+---
+
+### ⚙️ 4. 프로세스 및 작업 제어
+* **문제31** : 현재 실행 중인 프로세스를 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>ps -ef</blockquote></details>
+* **문제32** : 실시간 프로세스 상태를 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>top (또는 htop)</blockquote></details>
+* **문제33** : `nginx` 프로세스를 검색하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>ps -ef | grep nginx</blockquote></details>
+* **문제34** : PID 1234 프로세스를 종료하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>kill 1234</blockquote></details>
+* **문제35** : 백그라운드로 `sleep 100` 명령을 실행하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sleep 100 &</blockquote></details>
+* **문제36** : 현재 백그라운드 작업 목록을 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>jobs</blockquote></details>
+
+---
+
+### 📦 5. 패키지 및 서비스 관리
+* **문제37** : `nginx` 서비스를 설치하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo apt install nginx</blockquote></details>
+* **문제38** : `nginx` 서비스 상태를 확인하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>systemctl status nginx</blockquote></details>
+* **문제39** : `nginx` 서비스를 재시작하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo systemctl restart nginx</blockquote></details>
+* **문제40** : `nginx` 서비스를 부팅 시 자동 실행되게 설정하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo systemctl enable nginx</blockquote></details>
+* **문제41** : `nginx` 로그를 확인하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>journalctl -u nginx</blockquote></details>
+* **문제42** : 실시간 로그를 확인하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>journalctl -f</blockquote></details>
+* **문제43** : `app.log` 파일에서 `error` 문자열을 검색하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>grep "error" app.log</blockquote></details>
+* **문제44** : 설치된 패키지 목록을 확인하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>dpkg -l</blockquote></details>
+* **문제45** : 패키지 목록을 업데이트 하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo apt update</blockquote></details>
+* **문제46** : 시스템 패키지를 업그레이드 하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo apt upgrade</blockquote></details>
+
+---
+
+### 📝 6. vi/vim 편집기 익히기
+* **문제47** : `vim` 편집기를 설치하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>sudo apt install vim</blockquote></details>
+* **문제48** : `hello.txt` 파일을 `vim`으로 생성하시오.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>vim hello.txt</blockquote></details>
+* **문제49** : `vim`에서 저장 후 종료하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>명령 모드에서 :wq 입력</blockquote></details>
+* **문제50** : `vim`에서 저장하지 않고 종료하세요.
+  <details><summary>정답 확인 (클릭)</summary><blockquote>명령 모드에서 :q! 입력</blockquote></details>
