@@ -588,8 +588,9 @@
   <details>
   <summary>정답 확인 (클릭)</summary>
   <blockquote>
-  운
-
+  운영 중인 서비스를 중단하거나 디스크를 분리하지 않고도, 온라인 상태에서 디스크 용량을 유연하게 확장할 수 있다는 점입니다.
+  </blockquote>
+  </details>
 
 
 
