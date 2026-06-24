@@ -592,6 +592,128 @@
   </blockquote>
   </details>
 
+--------------------------------------
+
+# Linux Day 1 학습 정리
+
+## 개념 문제
+1. **Shell의 역할은 무엇인가?**
+   <details>
+   <summary>정답 보기</summary>
+   사용자가 입력한 명령어를 해석하여 커널에 전달하고 실행 결과를 사용자에게 반환한다.
+   </details>
+
+2. **Linux에서 모든 파일의 시작점이 되는 디렉터리는?**
+   <details>
+   <summary>정답 보기</summary>
+   / (루트)
+   </details>
+
+3. **/etc 디렉터리는 무엇을 저장하는가?**
+   <details>
+   <summary>정답 보기</summary>
+   시스템 및 프로그램의 설정 파일
+   </details>
+
+4. **root 사용자는 어떤 계정인가?**
+   <details>
+   <summary>정답 보기</summary>
+   시스템의 모든 권한을 가진 최고 관리자 계정
+   </details>
+
+5. **Hard Link와 Symbolic Link의 가장 큰 차이는?**
+   <details>
+   <summary>정답 보기</summary>
+   Hard Link는 inode를 공유하고 Symbolic Link는 원본 경로를 가리킨다.
+   </details>
+
+6. **apt가 dpkg보다 편리한 이유는?**
+   <details>
+   <summary>정답 보기</summary>
+   의존성을 자동으로 해결한다.
+   </details>
+
+7. **cron은 언제 사용하는가?**
+   <details>
+   <summary>정답 보기</summary>
+   반복적으로 실행되는 작업을 예약할 때
+   </details>
+
+8. **at은 언제 사용하는가?**
+   <details>
+   <summary>정답 보기</summary>
+   한 번만 실행되는 예약 작업을 만들 때
+   </details>
+
+9. **RAID 5는 몇 개의 디스크 고장을 허용하는가?**
+   <details>
+   <summary>정답 보기</summary>
+   1개
+   </details>
+
+10. **LVM의 가장 큰 장점은?**
+    <details>
+    <summary>정답 보기</summary>
+    논리 볼륨을 서비스 중단 없이 유연하게 확장, 관리할 수 있다.
+    </details>
+
+## 명령어 기억형
+1. **현재 위치 출력?** <details><summary>정답</summary>pwd</details>
+2. **현재 디렉터리 목록 보기?** <details><summary>정답</summary>ls</details>
+3. **숨김파일 포함 상세조회?** <details><summary>정답</summary>ls -al</details>
+4. **사용자 생성?** <details><summary>정답</summary>sudo adduser user1</details>
+5. **사용자에게 sudo 권한 부여?** <details><summary>정답</summary>sudo usermod -aG sudo user1</details>
+6. **권한 변경?** <details><summary>정답</summary>chmod</details>
+7. **소유자 권한 변경?** <details><summary>정답</summary>chown</details>
+8. **실행 중인 모든 프로세스 확인?** <details><summary>정답</summary>ps -ef</details>
+9. **nginx 상태 확인?** <details><summary>정답</summary>systemctl status nginx</details>
+10. **현재 마운트된 디스크 확인?** <details><summary>정답</summary>df -h</details>
+
+## 실습형
+1. **test.txt 파일을 생성하시오 :** <details><summary>정답</summary>touch test.txt</details>
+2. **test.txt 권한을 644로 변경하시오 :** <details><summary>정답</summary>sudo chmod 644 test.txt</details>
+3. **devops 디렉터리를 생성하시오 :** <details><summary>정답</summary>sudo mkdir devops</details>
+4. **test.txt를 backup.txt로 이름 변경하시오. :** <details><summary>정답</summary>sudo mv test.txt backup.txt</details>
+5. **backup.txt를 삭제하시오. :** <details><summary>정답</summary>rm backup.txt</details>
+
+## 운영형
+1. **서버에 새로운 개발자가 입사했다. 가장 먼저 해야하는 작업은?**
+   <details><summary>정답 보기</summary>사용자 생성 -> 비밀번호 생성 -> 필요한 그룹 추가 -> sudo 권한(필요 시) -> SSH 접속 확인</details>
+2. **서비스가 부팅 후 자동 실행되도록 설정하는 명령어는?** <details><summary>정답</summary>sudo systemctl enable 서비스명</details>
+3. **로그를 실시간 확인하는 명령어는?** <details><summary>정답</summary>tail -f, journalctl -f</details>
+4. **시스템 전체 로그를 확인하는 명령어는?** <details><summary>정답</summary>journalctl</details>
+5. **서비스 재시작 명령어는?** <details><summary>정답</summary>sudo systemctl restart 서비스명</details>
+
+## 장애 대응형
+1. **SSH 접속이 되지 않는다. 가장 먼저 확인해야 할 것은?** <details><summary>정답</summary>sudo systemctl status ssh</details>
+2. **웹이 접속되지 않는다. 가장 먼저 확인해야 할 것은?** <details><summary>정답</summary>sudo systemctl status httpd or nginx</details>
+3. **80번 포트를 누가 사용하는지 확인하는 명령어는?** <details><summary>정답</summary>sudo lsof -i :80</details>
+4. **Permission denied가 발생했다. 가장 먼저 확인할 것은?** <details><summary>정답</summary>ls -l (파일 권한과 소유자 확인)</details>
+5. **디스크 용량이 부족하다. 가장 먼저 확인할 명령어는?** <details><summary>정답</summary>df -h</details>
+
+## 서버 구축형
+1. **웹 서버 구축 순서를 말하시오.** <details><summary>정답</summary>패키지 설치 -> 서비스 시작 -> 방화벽 확인 -> 웹 접속 테스트 -> 로그 확인</details>
+2. **SSH 서버 구축 후 가장 먼저 확인할 것은?** <details><summary>정답</summary>원격 접속이 정상적으로 되는지 확인</details>
+3. **디스크 추가 후 순서를 말하시오.** <details><summary>정답</summary>디스크 확인 -> 파티션 생성 -> 파일 시스템 생성 -> 마운트 -> /etc/fstab 등록</details>
+4. **RAID 구축 후 반드시 확인해야 하는 것은?** <details><summary>정답</summary>RAID 상태가 정상인지, 디스크가 모두 인식되는지 확인</details>
+5. **LVM 생성 후 가장 먼저 확인할 것은?** <details><summary>정답</summary>논리 볼륨이 정상 생성되었고 마운트가 가능한지 확인</details>
+
+## 로그 분석형
+1. **nginx 로그 위치는?** <details><summary>정답</summary>/var/log/nginx/</details>
+2. **systemd 로그 확인 명령어는?** <details><summary>정답</summary>journalctl</details>
+3. **실시간 로그 확인 명령어는?** <details><summary>정답</summary>tail -f 파일명</details>
+4. **특정 서비스 로그만 확인하는 명령어는?** <details><summary>정답</summary>journalctl -u 서비스명</details>
+5. **로그를 보는 가장 큰 이유는?** <details><summary>정답</summary>장애 원인을 파악하고 문제를 해결하기 위해</details>
+
+## 보안형
+1. **root 계정을 평소에도 사용하는 것이 권장되지 않는 이유는?** <details><summary>정답</summary>실수 한 번으로 시스템 전체에 영향을 줄 수 있기 때문이다.</details>
+2. **sudo를 사용하는 이유는?** <details><summary>정답</summary>필요한 작업에만 관리자 권한을 일시적으로 사용하기 위해</details>
+3. **chmod 777을 남용하면 안 되는 이유는?** <details><summary>정답</summary>모든 사용자에게 읽기, 쓰기, 실행 권한을 부여하여 보안 위험이 커진다.</details>
+4. **비밀번호 정보는 어느 파일에 저장되는가?** <details><summary>정답</summary>/etc/shadow</details>
+5. **사용자 정보는 어느 파일에 저장되는가?** <details><summary>정답</summary>/etc/passwd</details>
+
+  
+
 
 
 
